@@ -28,17 +28,26 @@ def main(dst, port):
         send(packet)
         print(f"--> Message number {i} sent !")
 
+
 def __configure_argparse__():
+    """Configure argparser
+
+    Returns:
+        parser: Arguments parser
+    """
     parser = argparse.ArgumentParser(description='Foo')
     requiredNamed = parser.add_argument_group('required named arguments')
-    requiredNamed.add_argument('-d', '--dst', help='Destination address', required=True)
-    requiredNamed.add_argument('-p', '--port', help='Destination port', required=True, type=int)
+    requiredNamed.add_argument(
+        '-d', '--dst', help='Destination address', required=True)
+    requiredNamed.add_argument(
+        '-p', '--port', help='Destination port', required=True, type=int)
 
     return parser
 
+
 # Entry point
 if __name__ == "__main__":
-    parser = __configure_argparse__() 
+    parser = __configure_argparse__()
     args = parser.parse_args()
 
     main(args.dst, args.port)
