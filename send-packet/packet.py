@@ -1,3 +1,8 @@
+# TCP IP Security
+# Send packet with interval
+# HE-Arc - Security
+# 2021, Welcklen & Fridez
+
 from scapy.all import *
 from scapy.layers.inet import *
 from time import sleep
