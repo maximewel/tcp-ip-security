@@ -5,10 +5,10 @@ serversocket = socket.socket(
             socket.AF_INET, socket.SOCK_STREAM)
 
 # get local machine name
-host = 'localhost'
-port = 9999               
+host = '192.168.1.103'
+port = 9999
 # bind to the port
-serversocket.bind((host, port))                                  
+serversocket.bind((host, port))
 
 # queue up to 5 requests
 serversocket.listen(5)                                           
