@@ -24,3 +24,22 @@ its all done ! Enjoy the project.
 - Sequence number is predictable
 - Link with above layer
 - Comparison avec UDP
+
+## Members
+
+<table>
+    <tr>
+    <th>Developer</th>
+    <th>Developer</th>
+    </tr>
+   <tr>
+      <td>
+         <a href="https://github.com/maximewel"><img width=140px src="https://avatars.githubusercontent.com/u/71388163?v=4"><br>
+         Welcklen Maxime</a>
+      </td>
+      <td>
+         <a href="https://github.com/fridezlucas"><img width=140px src="https://avatars.githubusercontent.com/u/19173830?v=4"><br>
+         Fridez Lucas</a>
+      </td>
+   </tr>
+</table>
