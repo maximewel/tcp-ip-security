@@ -46,6 +46,7 @@ def __configure_argparse__():
 
 
 # Entry point
+# Run this script in sudo mode !
 if __name__ == "__main__":
     parser = __configure_argparse__()
     args = parser.parse_args()
