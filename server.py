@@ -5,7 +5,7 @@ serversocket = socket.socket(
             socket.AF_INET, socket.SOCK_STREAM)
 
 # get local machine name
-host = '192.168.1.103'
+host = 'localhost'
 port = 9999               
 # bind to the port
 serversocket.bind((host, port))                                  
