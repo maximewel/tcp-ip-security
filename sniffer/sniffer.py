@@ -20,7 +20,7 @@ def sniff_packet(packet):
 
 def main():
     print("Custom Packets sniffer")
-    sniff(filter="ip", prn=sniff_packet, iface="wlp59s0")
+    sniff(filter="ip and dst 157.26.0.0", prn=sniff_packet, iface="wlp59s0")
 
 if __name__ == "__main__":
     main()
