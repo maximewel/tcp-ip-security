@@ -17,14 +17,12 @@ def main(dst, port):
         dst (str): Destination address
         port (int): Destination port
     """
-    DST = dst
-    D_PORT = port
     SLEEP_S = 1
     NBR_MSG = 100
 
     # Send packets
     for i in range(1, NBR_MSG + 1):
-        packet = IP(dst=DST)/TCP(dport=D_PORT)/f"Hi, it is message number {i}"
+        packet = IP(dst=dst)/TCP(dport=port)/f"Hi, it is message number {i}"
         sleep(SLEEP_S)
         send(packet)
         print(f"--> Message number {i} sent !")
