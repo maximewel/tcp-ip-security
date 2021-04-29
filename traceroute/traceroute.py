@@ -1,10 +1,15 @@
-# TCP IP Security
-# Try traceroute in Python
-# HE-Arc - Security
-# 2021, Welcklen & Fridez
+"""
+Authors : Fridez Lucas, Maxime Welcklen
+Traceroute with Scapy
+"""
 
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 import matplotlib.pyplot as plt
 
-ans, unans = traceroute('fridez.dev')
+
+# Entry point
+# Run this script in sudo mode !
+if __name__ == "__main__":
+    ans, unans = traceroute('fridez.dev')

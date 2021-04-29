@@ -1,8 +1,9 @@
-# TCP IP Security
-# Send packet with interval
-# HE-Arc - Security
-# 2021, Welcklen & Fridez
+"""
+Authors : Fridez Lucas, Maxime Welcklen
+Send a packet with interval
+"""
 
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 from time import sleep

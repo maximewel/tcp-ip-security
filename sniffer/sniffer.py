@@ -1,8 +1,9 @@
-# TCP IP Security
-# Sniff
-# HE-Arc - Security
-# 2021, Welcklen & Fridez
+"""
+Authors : Fridez Lucas, Maxime Welcklen
+Sniffer
+"""
 
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 import argparse
@@ -58,6 +59,7 @@ parser.add_argument("-iface", help="Interface from which to capture")
 
 
 # Entry point
+# Run this script in sudo mode !
 if __name__ == "__main__":
     args = parser.parse_args()
     main(args)
