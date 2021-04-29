@@ -9,12 +9,6 @@ from scapy.layers.inet import *
 import argparse
 
 
-B = "192.168.1.103"  # destination IP address
-
-D = 9999  # destination port
-payload = "Hello from scappy spoofing !"  # packet payload
-
-
 def __configure_argparse__():
     """Configure argparser
 
@@ -46,11 +40,12 @@ def main(destination_ip, dport, iface):
     """
     SOURCE_IP = "1.2.3."
     SOURCE_PORT = RandShort()
+    PAYLOAD = "Hello from scappy spoofing !"  # packet payload
 
     # Send 50 packets to be really visible
     for i in range(50, 100):
         spoofed_packet = IP(src=f"{SOURCE_IP}{i}", dst=destination_ip) / \
-            TCP(sport=SOURCE_PORT, dport=dport) / payload
+            TCP(sport=SOURCE_PORT, dport=dport) / PAYLOAD
         send(spoofed_packet, iface=iface)
 
 
