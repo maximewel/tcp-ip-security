@@ -18,12 +18,13 @@ its all done ! Enjoy the project.
 
 ## Content
 
-- show TCP/IP layer
+- Show TCP/IP layer
 - IP Spoofing module
-- ICMP DOS Attack
-- Sequence number is predictable
-- Link with above layer
-- Comparison avec UDP
+- ICMP DOS Attack + TCP SYN Attack
+- Fragmentations
+   - Fragmentation Overlapping
+   - Ping of Death
+- Comparison with UDP
 
 ## Members
 
