@@ -1,8 +1,9 @@
-# TCP IP Security
-# Send packet with interval
-# HE-Arc - Security
-# 2021, Welcklen & Fridez
+"""
+Authors : Fridez Lucas, Maxime Welcklen
+Send a packet with interval
+"""
 
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 from time import sleep
@@ -16,14 +17,12 @@ def main(dst, port):
         dst (str): Destination address
         port (int): Destination port
     """
-    DST = dst
-    D_PORT = port
     SLEEP_S = 1
     NBR_MSG = 100
 
     # Send packets
     for i in range(1, NBR_MSG + 1):
-        packet = IP(dst=DST)/TCP(dport=D_PORT)/f"Hi, it is message number {i}"
+        packet = IP(dst=dst)/TCP(dport=port)/f"Hi, it is message number {i}"
         sleep(SLEEP_S)
         send(packet)
         print(f"--> Message number {i} sent !")

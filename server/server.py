@@ -1,3 +1,9 @@
+"""
+Authors : Fridez Lucas, Maxime Welcklen
+Little server
+"""
+
+# Imports
 import socket                                         
 
 # create a socket object

