@@ -24,7 +24,7 @@ def __configure_argparse__():
     requiredNamed.add_argument(
         '-d', '--dst', help='Destination address', required=True)
     requiredNamed.add_argument(
-        '-s', '--src', type=int, help='Source address', required=True)
+        '-s', '--src', help='Source address', required=True)
     requiredNamed.add_argument(
         '-i', '--iface', help='Interface', required=True)
 
